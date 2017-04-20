@@ -13,7 +13,10 @@ if __name__ == '__main__':
     for t in docs:
         tex = t[0]
         topK = len(tex) / 5
-        key_words = jieba.analyse.extract_tags(tex, topK=topK, allowPOS=['ns', 'n', 'vn', 'v', 'nr', 'a', 'ad'])
+        key_words = jieba.analyse.extract_tags(tex, topK=topK,
+                                               allowPOS=['ns', 'n', 'vn', 'v', 'vd', 'nr', 'a', 'ad', 'an', 'd', 'i',
+                                                         'ns', 'nt',
+                                                         'nz'])
         doc_key_words.extend(key_words)
 
     from collections import Counter
